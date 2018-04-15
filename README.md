@@ -13,7 +13,3 @@
 
 
 > 未完待续。。。。
-## 加入我们
-微信二维码
-
->![微信号](http://120.79.12.27:8080/zhu/H_link/raw/master/other/weixin2.jpg)
