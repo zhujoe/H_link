@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+    <script type="text/javascript" src="js/papaparse.js"></script>
+    <script type="text/javascript" src="js/jschardet.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/fan.css" />
+</head>
+
+<body>
+    <div id="box" class="box">
+        <div id="box_top" class="divcss1">
+            <p id="title" class="title">hello! {=_=}</p>
+        </div>
+        <div id="box_1" class="divcss2">
+            <div class="list_1 flip out">
+                <div id="b1_b">
+                    <h1>天气</h1>
+                    <div id="b1_b_text">
+                        <input type="file" name="csvfile" onchange="csv()" />
+                    </div>
+                </div>
+            </div>
+            <div class="list_1 flip">
+                <div id="b1_f"></div>
+            </div>
+        </div>
+        <div id="box_2" class="divcss2">
+            <div class="list_2 flip out">
+                <div id="b2_b">
+                    <h1>留言</h1>
+                </div>
+            </div>
+            <div class="list_2 flip">
+                <div id="b2_f"></div>
+            </div>
+        </div>
+        <div id="box_3" class="divcss2">
+            <div class="list_3 flip out">
+                <div id="b3_b">
+                    <h1>新闻</h1>
+                </div>
+            </div>
+            <div class="list_3 flip">
+                <div id="b3_f"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/fan.js"></script>
+    <script type="text/javascript" src="js/csv2arr.js"></script>
+    <!-- <script type="text/javascript" src="js/mqttc.js"></script> -->
+    <!-- txt，jpg文件读取 -->
+    <!-- <input type="file" onchange="jsReadFiles(this.files)" /> -->
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/fan.css" type="text/css" />
+</head>
+
+<body>
+    <p>动画效果：
+        <select id="animation">
+            <option value="1">动画1</option>
+            <option value="2">动画2</option>
+            <option value="3">动画3</option>
+            <option value="4">动画4</option>
+        </select>
+        <input id="exec" type="button" value="执行动画">
+    </p>
+    <div id="myDiv" style="width:300px; height: 100px; background-color: #eee;">CodePlayer</div>
+    <script>
+    $("#exec").click(function() {
+        var v = $("#animation").val();
+        var $myDiv = $("#myDiv");
+        if (v == "1") {
+            $myDiv.slideUp(1000)
+                .delay("slow")
+                .fadeIn(1500);
+        } else if (v == "2") {
+            $myDiv.fadeOut("slow")
+                .delay(2000)
+                .slideDown(1000)
+                .animate({ height: "+=300" });
+        } else if (v == "3") {
+            /*
+            注意：只有动画才会被加入效果队列中
+            以下代码实际上只有slideUp()、slideDown()会加入效果队列
+            delay()的延迟只对slideDown()起作用
+            show()在被调用时就立即执行了(此时slideUp的动画效果尚未执行结束)
+            以下代码的执行顺序时：
+            1、slideUp()被加入队列、开始执行，
+            2、show()也开始执行，它立即执行完毕，此时slideUp()的动画尚未执行结束
+            3、延迟2秒
+            4、执行SlideDown()
+            */
+            $myDiv.slideUp("slow")
+                .delay(2000)
+                .show() // 它不是一个效果动画
+                .slideDown();
+        } else if (v == "4") {
+            $myDiv.show()
+                .delay(2000)
+                // 在现有高度的基础上增加300px (如果原来是100px，增加后就是400px)
+                .animate({ height: "+=300px" }, 2000)
+                .animate({ width: "50%" }, 1000)
+                .animate({ width: "200px", height: "100px" }, 1000);
+        }
+    });
+    </script>
+</body>
